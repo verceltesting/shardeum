@@ -172,7 +172,9 @@ rl.on('close', () => {
   function printVariantCyclesDifferences(start = 0, end = uniqueCompleteCycles.length) {
     if (end > uniqueCompleteCycles.length) end = uniqueCompleteCycles.length
     for (let i = start; i < end; i++) {
-      if (uniqueCompleteCycles[i].size > 1) printCycleDifferences(i)
+      if (isRotationOOS(i) === false) {
+        if (uniqueCompleteCycles[i].size > 1) printCycleDifferences(i)
+      }
     }
   }
 
