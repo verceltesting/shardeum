@@ -94,11 +94,13 @@ rl.on('close', () => {
   // Analysis functions
 
   function printCycle(cycle) {
-    console.log('Cycle', cycle);
-    console.log('Unique records:', uniqueCompleteCycles[cycle].size);
+    console.log('Cycle', cycle)
+    console.log('Unique records:', uniqueCompleteCycles[cycle].size)
     for (const [key, value] of uniqueCompleteCycles[cycle].entries()) {
-      console.log(`${value.length} nodes: ${value.join(', ')} `);
-      console.log(key);
+      console.log(`${value.length} nodes: ${value.join(', ')} `)
+      console.log(key)
+    }
+  }
 
   function printCycleDifferences(cycle) {
     console.log('Cycle', cycle)
@@ -122,7 +124,6 @@ rl.on('close', () => {
   }
 
   function compareValues(val1, val2, path) {
-    // Iterate over all properties in the first object
     for (const key in val1) {
       const newPath = [...path, key]
       if (val2.hasOwnProperty(key)) {
@@ -145,7 +146,6 @@ rl.on('close', () => {
       }
     }
 
-    // Check for any properties in the second object that are not in the first object
     for (const key in val2) {
       if (!val1.hasOwnProperty(key)) {
         console.log(`Property '${path.concat(key).join('.')}' not found in the first object`)
@@ -154,16 +154,18 @@ rl.on('close', () => {
   }
 
   function printCycles(start = 0, end = uniqueCompleteCycles.length) {
-    if (end > uniqueCompleteCycles.length) end = uniqueCompleteCycles.length;
+    if (end > uniqueCompleteCycles.length) end = uniqueCompleteCycles.length
     for (let i = start; i < end; i++) {
-      printCycle(i);
+      printCycle(i)
     }
   }
 
   function printVariantCycles(start = 0, end = uniqueCompleteCycles.length) {
-    if (end > uniqueCompleteCycles.length) end = uniqueCompleteCycles.length;
+    if (end > uniqueCompleteCycles.length) end = uniqueCompleteCycles.length
     for (let i = start; i < end; i++) {
-      if (uniqueCompleteCycles[i].size > 1) printCycle(i);
+      if (uniqueCompleteCycles[i].size > 1) printCycle(i)
+    }
+  }
 
   function printVariantCyclesDifferences(start = 0, end = uniqueCompleteCycles.length) {
     if (end > uniqueCompleteCycles.length) end = uniqueCompleteCycles.length
