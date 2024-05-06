@@ -113,13 +113,15 @@ rl.on('close', () => {
 
     console.log(`Value differences in Cycle ${cycle}:`)
 
-    for (let i = 0; i < entries.length - 1; i++) {
-      const [key1, value1] = entries[i]
-      const [key2, value2] = entries[i + 1]
+    for (let i = 0; i < entries.length; i++) {
+      for (let j = i + 1; j < entries.length; j++) {
+        const [key1, value1] = entries[i]
+        const [key2, value2] = entries[j]
 
-      console.log(`Differences between entries for nodes ${value1} and ${value2}:`)
+        console.log(`Differences between entries for nodes ${value1} and ${value2}:`)
 
-      compareValues(key1, key2, [])
+        compareValues(key1, key2, [])
+      }
     }
   }
 
