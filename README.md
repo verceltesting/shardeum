@@ -271,7 +271,7 @@ To run the server, use the command
 npm run start
 ```
 
-You now have a fully functioning Shardeum network on your local machine! 🎉
+congratulations You now have a fully functioning Shardeum network on your local machine! 🎉
 
 ## Contributing
 
